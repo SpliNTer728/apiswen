@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import { Modal } from '../ui/Modal';
-import { Button } from '../ui/Button';
-import { useLanguage } from '@/contexts/LanguageContext';
 import { Mail } from 'lucide-react';
+import { useState } from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { Button } from '../ui/Button';
+import { Modal } from '../ui/Modal';
 
 interface AuthModalProps {
   isOpen: boolean;
@@ -87,6 +87,7 @@ export function AuthModal({ isOpen, onClose, mode: initialMode }: AuthModalProps
   };
 
   const handleOAuthLogin = async (provider: 'google' | 'facebook') => {
+    console.log(provider)
     setLoading(true);
     setError(null);
 

@@ -1,7 +1,7 @@
 import { User, LogOut, Globe, Home, Settings } from 'lucide-react';
-import { Button } from '@/components/swen/ui/Button';
 import { useState } from 'react';
 import { AuthModal } from '@/components/swen/auth/AuthModal';
+import { Button } from '@/components/swen/ui/Button';
 
 interface UserType {
   first_name?: string;
@@ -19,7 +19,7 @@ export function Header({ user = null, language = 'fr' }: HeaderProps) {
   const [authMode, setAuthMode] = useState<'login' | 'signup'>('login');
 
   const handleAccountClick = () => {
-    console.log('login');
+    console.log(setAuthMode);
     setIsAuthModalOpen(true);
   };
 

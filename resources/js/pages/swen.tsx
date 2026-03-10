@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { usePage } from '@inertiajs/react';
 import { Calendar, Waves, Anchor } from 'lucide-react';
+import { useState } from 'react';
 import { Header } from '@/components/swen/layout/Header';
 import { Button } from '@/components/swen/ui/Button';
 import { LanguageProvider, useLanguage } from '@/contexts/LanguageContext';
-import { usePage } from '@inertiajs/react';
 
 function AppContent() {
     const [currentPage, setCurrentPage] = useState<'home' | 'dashboard' | 'account'>('home');
