@@ -11,4 +11,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::inertia('dashboard', 'dashboard')->name('dashboard');
 });
 
+ Route::inertia('swen', 'swen', [
+    'appUrl' => env('APP_URL'),
+])->name('swen');
+
+
 require __DIR__.'/settings.php';

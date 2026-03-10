@@ -162,6 +162,86 @@ Controller42a740574ecbfbac32f8cc353fc32db9.form = Controller42a740574ecbfbac32f8
 /**
 * @see \Inertia\Controller::__invoke
 * @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
+* @route '/swen'
+*/
+const Controller332ed786f8d0abad531a6813c1553878 = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: Controller332ed786f8d0abad531a6813c1553878.url(options),
+    method: 'get',
+})
+
+Controller332ed786f8d0abad531a6813c1553878.definition = {
+    methods: ["get","head"],
+    url: '/swen',
+} satisfies RouteDefinition<["get","head"]>
+
+/**
+* @see \Inertia\Controller::__invoke
+* @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
+* @route '/swen'
+*/
+Controller332ed786f8d0abad531a6813c1553878.url = (options?: RouteQueryOptions) => {
+    return Controller332ed786f8d0abad531a6813c1553878.definition.url + queryParams(options)
+}
+
+/**
+* @see \Inertia\Controller::__invoke
+* @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
+* @route '/swen'
+*/
+Controller332ed786f8d0abad531a6813c1553878.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: Controller332ed786f8d0abad531a6813c1553878.url(options),
+    method: 'get',
+})
+
+/**
+* @see \Inertia\Controller::__invoke
+* @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
+* @route '/swen'
+*/
+Controller332ed786f8d0abad531a6813c1553878.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+    url: Controller332ed786f8d0abad531a6813c1553878.url(options),
+    method: 'head',
+})
+
+/**
+* @see \Inertia\Controller::__invoke
+* @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
+* @route '/swen'
+*/
+const Controller332ed786f8d0abad531a6813c1553878Form = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    action: Controller332ed786f8d0abad531a6813c1553878.url(options),
+    method: 'get',
+})
+
+/**
+* @see \Inertia\Controller::__invoke
+* @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
+* @route '/swen'
+*/
+Controller332ed786f8d0abad531a6813c1553878Form.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    action: Controller332ed786f8d0abad531a6813c1553878.url(options),
+    method: 'get',
+})
+
+/**
+* @see \Inertia\Controller::__invoke
+* @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
+* @route '/swen'
+*/
+Controller332ed786f8d0abad531a6813c1553878Form.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    action: Controller332ed786f8d0abad531a6813c1553878.url({
+        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+            _method: 'HEAD',
+            ...(options?.query ?? options?.mergeQuery ?? {}),
+        }
+    }),
+    method: 'get',
+})
+
+Controller332ed786f8d0abad531a6813c1553878.form = Controller332ed786f8d0abad531a6813c1553878Form
+/**
+* @see \Inertia\Controller::__invoke
+* @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
 * @route '/settings/appearance'
 */
 const Controllere19ee86e9cf603ce1a59a1ec5d21dec5 = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -243,6 +323,7 @@ Controllere19ee86e9cf603ce1a59a1ec5d21dec5.form = Controllere19ee86e9cf603ce1a59
 const Controller = {
     '/': Controller980bb49ee7ae63891f1d891d2fbcf1c9,
     '/dashboard': Controller42a740574ecbfbac32f8cc353fc32db9,
+    '/swen': Controller332ed786f8d0abad531a6813c1553878,
     '/settings/appearance': Controllere19ee86e9cf603ce1a59a1ec5d21dec5,
 }
 

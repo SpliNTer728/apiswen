@@ -378,3 +378,84 @@ dashboardForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> =
 })
 
 dashboard.form = dashboardForm
+
+/**
+* @see \Inertia\Controller::__invoke
+* @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
+* @route '/swen'
+*/
+export const swen = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: swen.url(options),
+    method: 'get',
+})
+
+swen.definition = {
+    methods: ["get","head"],
+    url: '/swen',
+} satisfies RouteDefinition<["get","head"]>
+
+/**
+* @see \Inertia\Controller::__invoke
+* @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
+* @route '/swen'
+*/
+swen.url = (options?: RouteQueryOptions) => {
+    return swen.definition.url + queryParams(options)
+}
+
+/**
+* @see \Inertia\Controller::__invoke
+* @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
+* @route '/swen'
+*/
+swen.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: swen.url(options),
+    method: 'get',
+})
+
+/**
+* @see \Inertia\Controller::__invoke
+* @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
+* @route '/swen'
+*/
+swen.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+    url: swen.url(options),
+    method: 'head',
+})
+
+/**
+* @see \Inertia\Controller::__invoke
+* @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
+* @route '/swen'
+*/
+const swenForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    action: swen.url(options),
+    method: 'get',
+})
+
+/**
+* @see \Inertia\Controller::__invoke
+* @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
+* @route '/swen'
+*/
+swenForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    action: swen.url(options),
+    method: 'get',
+})
+
+/**
+* @see \Inertia\Controller::__invoke
+* @see vendor/inertiajs/inertia-laravel/src/Controller.php:13
+* @route '/swen'
+*/
+swenForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    action: swen.url({
+        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+            _method: 'HEAD',
+            ...(options?.query ?? options?.mergeQuery ?? {}),
+        }
+    }),
+    method: 'get',
+})
+
+swen.form = swenForm
