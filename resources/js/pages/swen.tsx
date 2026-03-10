@@ -14,7 +14,7 @@ function AppContent() {
         <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
             <Header currentPage={currentPage} onNavigate={setCurrentPage} />
             <div className="relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#10113A] via-[#1a1d5a] to-[#10113A] opacity-5"></div>
+                <div className="absolute inset-0 bg-gray-100"></div>
 
                 <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 pb-20 sm:pb-32">
                     <div className="mb-12">

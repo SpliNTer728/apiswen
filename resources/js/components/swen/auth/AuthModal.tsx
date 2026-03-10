@@ -1,3 +1,4 @@
+import { router } from '@inertiajs/react';
 import { Mail } from 'lucide-react';
 import { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -21,24 +22,29 @@ export function AuthModal({ isOpen, onClose, mode: initialMode }: AuthModalProps
   const [success, setSuccess] = useState<string | null>(null);
   const { t } = useLanguage();
 
-  const handleLogin = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-    setError(null);
+const handleLogin = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setLoading(true);
+  setError(null);
 
-    try {
-      const error = false;
-      if (error) throw error;
-
+  router.post('/login', {
+    email,
+    password,
+  }, {
+    onSuccess: () => {
       onClose();
       setEmail('');
       setPassword('');
-    } catch (err: any) {
-      setError(err.message);
-    } finally {
+    },
+    onError: (errors: any) => {
+      const errorMsg = errors.email?.[0] || 'Erreur de connexion';
+      setError(errorMsg);
+    },
+    onFinish: () => {
       setLoading(false);
-    }
-  };
+    },
+  });
+};
 
   const handleSignup = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -85,7 +91,7 @@ export function AuthModal({ isOpen, onClose, mode: initialMode }: AuthModalProps
       setLoading(false);
     }
   };
-
+/*
   const handleOAuthLogin = async (provider: 'google' | 'facebook') => {
     console.log(provider)
     setLoading(true);
@@ -101,7 +107,7 @@ export function AuthModal({ isOpen, onClose, mode: initialMode }: AuthModalProps
       setLoading(false);
     }
   };
-
+*/
   return (
     <Modal isOpen={isOpen} onClose={onClose} className="max-w-lg w-full">
       <div className="mx-auto">
@@ -111,7 +117,7 @@ export function AuthModal({ isOpen, onClose, mode: initialMode }: AuthModalProps
           {mode === 'login' ? t.auth.loginTitle : mode === 'signup' ? t.auth.signupTitle : 'Réinitialiser le mot de passe'}
         </h2>
 
-        <div className="space-y-3 mb-6">
+        {/* <div className="space-y-3 mb-6">
           <button
             type="button"
             onClick={() => handleOAuthLogin('google')}
@@ -150,9 +156,9 @@ export function AuthModal({ isOpen, onClose, mode: initialMode }: AuthModalProps
             </svg>
             <span className="font-semibold">Continuer avec Facebook</span>
           </button>
-        </div>
+        </div> */}
 
-        {mode !== 'reset' && (
+        {/* {mode !== 'reset' && (
           <>
             <div className="relative mb-6">
               <div className="absolute inset-0 flex items-center">
@@ -163,7 +169,7 @@ export function AuthModal({ isOpen, onClose, mode: initialMode }: AuthModalProps
               </div>
             </div>
           </>
-        )}
+        )} */}
 
         {mode === 'reset' && (
           <p className="text-sm text-gray-600 mb-6 text-center">

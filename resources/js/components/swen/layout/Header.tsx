@@ -2,7 +2,7 @@ import { User, LogOut, Globe, Home, Settings } from 'lucide-react';
 import { useState } from 'react';
 import { AuthModal } from '@/components/swen/auth/AuthModal';
 import { Button } from '@/components/swen/ui/Button';
-
+import '@css/output.css';
 interface UserType {
   first_name?: string;
   prenom?: string;

@@ -3,15 +3,15 @@
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
 
-Route::inertia('/', 'welcome', [
-    'canRegister' => Features::enabled(Features::registration()),
+Route::inertia('/', 'swen', [
+   // 'canRegister' => Features::enabled(Features::registration()),
 ])->name('home');
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::inertia('dashboard', 'dashboard')->name('dashboard');
 });
 
- Route::inertia('swen', 'swen', [
+Route::inertia('swen', 'swen', [
     'appUrl' => env('APP_URL'),
 ])->name('swen');
 
